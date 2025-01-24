@@ -8,15 +8,6 @@ function getComputerChoice () {
     return rpsOptions[choice];
 }
 
-function getUserChoice () {
-    choice = prompt("Rock, Paper, Scissors: ");
-    confirmChoice = rpsOptions.includes(choice.toLowerCase());
-    if (confirmChoice) {
-        return choice.toLowerCase();
-    }   else {
-        alert("Unknown Option!");
-    }
-}
 
 function playRound (humanChoice, computerChoice) {
     if (computerChoice === humanChoice) {
