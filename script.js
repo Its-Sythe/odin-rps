@@ -3,11 +3,28 @@ const rpsOptions = ["rock", "paper", "scissors"];
 let humanScore = 0;
 let computerScore = 0;
 
+
 function getComputerChoice () {
     choice = Math.round((Math.random() * 2), 0);
     return rpsOptions[choice];
 }
 
+function getUserChoice() {
+    function returnRock() {
+        return "rock";
+    };
+    function returnPaper() {
+        return "paper";
+    }
+    function returnScissors() {
+        return "scissors";
+    }
+    return {
+        returnRock,
+        returnPaper,
+        returnScissors
+    }
+}
 
 function playRound (humanChoice, computerChoice) {
     if (computerChoice === humanChoice) {
@@ -46,12 +63,8 @@ function playRound (humanChoice, computerChoice) {
     }
 }
 
-function playGame () {
-    const humanSelection = getUserChoice();
-    const computerSelection = getComputerChoice();  
-    playRound(humanSelection, computerSelection);
-}
+let human = getUserChoice();
+let computer = getComputerChoice();
 
-for (let num = 0; num < 5; num++) {
-    playGame()
-}
+playRound(human, computer);
+
