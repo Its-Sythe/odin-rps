@@ -2,6 +2,7 @@ const rpsOptions = ["rock", "paper", "scissors"];
 
 let humanScore = 0;
 let computerScore = 0;
+let roundCount = 0;
 
 document.getElementById('rock').addEventListener('click',getUserChoice);
 document.getElementById('paper').addEventListener('click',getUserChoice);
@@ -11,6 +12,7 @@ function getUserChoice(event) {
     let tgtId = event.target.id;
     let playerChoice = tgtId;
     playRound(playerChoice, getComputerChoice());
+    ++roundCount
 }
 
 function getComputerChoice () {
