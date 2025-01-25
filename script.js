@@ -2,20 +2,19 @@ const rpsOptions = ["rock", "paper", "scissors"];
 
 let humanScore = 0;
 let computerScore = 0;
-let playerChoice;
 
-document.getElementById('rock').addEventListener('click',handleUserChoice);
-document.getElementById('paper').addEventListener('click',handleUserChoice);
-document.getElementById('scissors').addEventListener('click',handleUserChoice);
+document.getElementById('rock').addEventListener('click',getUserChoice);
+document.getElementById('paper').addEventListener('click',getUserChoice);
+document.getElementById('scissors').addEventListener('click',getUserChoice);
 
-function handleUserChoice(event) {
+function getUserChoice(event) {
     let tgtId = event.target.id;
-    playerChoice = tgtId;
-    return playerChoice;
+    let playerChoice = tgtId;
+    playRound(playerChoice, getComputerChoice());
 }
 
 function getComputerChoice () {
-    choice = Math.round((Math.random() * 2), 0);
+    let choice = Math.round((Math.random() * 2), 0);
     return rpsOptions[choice];
 }
 
@@ -56,4 +55,3 @@ function playRound (humanChoice, computerChoice) {
     }
 }
 
-playRound(playerChoice, getComputerChoice());
