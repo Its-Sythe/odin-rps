@@ -2,28 +2,21 @@ const rpsOptions = ["rock", "paper", "scissors"];
 
 let humanScore = 0;
 let computerScore = 0;
+let playerChoice;
 
+document.getElementById('rock').addEventListener('click',handleUserChoice);
+document.getElementById('paper').addEventListener('click',handleUserChoice);
+document.getElementById('scissors').addEventListener('click',handleUserChoice);
+
+function handleUserChoice(event) {
+    let tgtId = event.target.id;
+    playerChoice = tgtId;
+    return playerChoice;
+}
 
 function getComputerChoice () {
     choice = Math.round((Math.random() * 2), 0);
     return rpsOptions[choice];
-}
-
-function getUserChoice() {
-    function returnRock() {
-        return "rock";
-    };
-    function returnPaper() {
-        return "paper";
-    }
-    function returnScissors() {
-        return "scissors";
-    }
-    return {
-        returnRock,
-        returnPaper,
-        returnScissors
-    }
 }
 
 function playRound (humanChoice, computerChoice) {
@@ -63,8 +56,4 @@ function playRound (humanChoice, computerChoice) {
     }
 }
 
-let human = getUserChoice();
-let computer = getComputerChoice();
-
-playRound(human, computer);
-
+playRound(playerChoice, getComputerChoice());
