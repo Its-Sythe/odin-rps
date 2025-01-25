@@ -62,4 +62,14 @@ body {
     font-size: 28px;
     font-weight: 800;
     font-family: Courier;
+    background-color: transparent;
+    border: 2px solid burlywood;
+    border-radius: 12%;
+    box-shadow: 8px 6px 10px burlywood;
+}
+
+#rounds-played {
+    font-weight: 800;
+    font-family: Helvetica;
+    font-size: 24px;
 }
